@@ -22,7 +22,10 @@ document.getElementById("city").addEventListener("keydown", (e) => {
 async function getWeather(defaultCity) {
   const cityInput = document.getElementById("city");
   const result = document.getElementById("result");
-  const city = defaultCity || cityInput.value.trim();
+  const city = (defaultCity !== undefined)
+  ? defaultCity
+  : cityInput.value.trim();
+
 
 
   if (!city) {
@@ -106,3 +109,4 @@ function escapeHtml(str){
 }
 // Auto load default city weather
 getWeather("Tirunelveli");
+
